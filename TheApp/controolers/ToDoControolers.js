@@ -1,6 +1,6 @@
 import ToDoModel from "../modles/ToDoModel.js";
 
-export const getToDo = async (req, res) => {
+export const getToDo= async (req, res) => {
   try {
     const { text } = req.body;
     if (!text) return res.status(404).json({ success: false, message: "All fields are mandtory.." })
@@ -65,3 +65,4 @@ export const deleteYourTodo = async (req, res) => {
       return res.status(500).json({ success: false, error: error.message })
   }
 }
+

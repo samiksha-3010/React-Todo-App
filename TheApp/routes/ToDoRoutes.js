@@ -1,13 +1,19 @@
 
 
-// import { Router } from "express";
-// import { getToDo, saveToDo } from "../controolers/ToDoControolers.js";
+
+// const { Router } = require("express");
+// const {
+//   getToDos,
+//   saveToDo,
+//   updateToDo,
+//   deleteToDo,
+// } = require("../controller/ToDoController");
 
 // const router = Router();
-// router.get("/get-todo",getToDo)
-// router.post("/save",saveToDo)
 
+// router.get("/get", getToDos);
+// router.post("/save", saveToDo);
+// router.put("/update/:id", updateToDo);
+// router.delete("/delete/:id", deleteToDo);
 
-
-
-// export default router;
+// module.exports = router;
