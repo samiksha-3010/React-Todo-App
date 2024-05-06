@@ -6,7 +6,7 @@ import { addToDo, getAllToDo, updateToDo,deleteToDo } from './utils/HandleApi';
 function App() {
   const [todo,setToDo] = useState([])
    const [text, setText]= useState("")
-   const [isUpdate, setIsUpdate] = useState ("")
+   const [isUpdate, setIsUpdate] = useState ()
    const [todoId, setToDoId] = useState("")
 
 
@@ -25,35 +25,16 @@ function App() {
     <div className="App">
      <div className=' container'>
      <h2>Hello Todo App</h2>
-     <div className='top'>
-
-  
-{/* <input
-    type='text'
-    placeholder='Add Todo.....'
-    value={text}
-    onChange={(e) => setText(e.target.value)}  // Update the text state
-/>
-<div
-    className="add"
-    onClick={isUpdate ?
-        () => updateToDo(todoId, text, setToDo, setText, setIsUpdate)
-        :
-        () => addToDo(text, setText, setToDo)  // Fix the addToDo function invocation
-    }
->
-    {isUpdate ? "Update" : "Add"}
-</div> */}
-
-      
+     <div className='top'>   
 <input 
     type='text'
     placeholder='Add Todo.....'
     value={text}
     onChange={(e) => setText(e.target.value)}  // Update the text state
 />
+
 <div
-    className="app"
+    className="add"
     onClick={isUpdate ?
         () => updateToDo(todoId, text, setToDo, setText, setIsUpdate)
         :
@@ -65,15 +46,6 @@ function App() {
 
 
 
-      {/* <div className="list">
-        {todo.map((item)=> <ToDo
-         key={item._id}
-         text={item.text}
-         updateMode={() => updateMode(item._id,item.text)}
-         deleteToDo={()=>deleteToDo(item._id,setToDo)}
-        
-         />)}
-      </div>  */}
 
 
 
@@ -103,7 +75,3 @@ function App() {
 }
 
 export default App;
-
-
-
-

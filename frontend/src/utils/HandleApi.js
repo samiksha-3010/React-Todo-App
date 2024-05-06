@@ -11,11 +11,11 @@ const getAllToDo = (setToDO) => {
         })
         .catch((err) => console.log(err));
 };
-const addToDo = (text, settext, setToDo) => {
+const addToDo = (text, setText, setToDo) => {
     axios.post(`${baseUrl}/getToDo`, { text })
         .then((data) => {
             console.log(data);
-            settext("");
+            setText("");
             getAllToDo(setToDo);
         })
         .catch((err) => console.log(err));
@@ -31,6 +31,7 @@ const updateToDo = (todoId, setIsUpdate, text, settext, setToDo) => {
         })
         .catch((err) => console.log(err));
 };
+
 const deleteToDo = (_id, setToDo) => {
     axios.post(`${baseUrl}/delete-Your-Todo`, { _id })
         .then((data) => {

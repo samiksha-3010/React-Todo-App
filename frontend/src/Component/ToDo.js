@@ -1,4 +1,7 @@
 import React from 'react'
+import{BiEdit} from "react-icons/bi"
+import{AiFillDelete} from "react-icons/ai"
+
 import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 const ToDo = ( { text, updateMode, deleteToDo }) => {
@@ -11,7 +14,7 @@ const ToDo = ( { text, updateMode, deleteToDo }) => {
             <CiEdit className='icon' onClick={updateMode} />
             </div>
     </div>
-  )
+  ) 
 }
 
 export default ToDo

@@ -1,11 +1,8 @@
 import ToDoModel from "../modles/ToDoModel.js";
 
-
-
-
 export const getToDo = async (req, res) => {
   try {
-    const { text } = req.body.todoData;
+    const { text } = req.body.TodoData;
     if (!text) return res.status(404).json({ success: false, message: "All fields are mandtory.." })
     
     const todo= new ToDoModel({
@@ -19,6 +16,8 @@ export const getToDo = async (req, res) => {
     return res.status(500).json({ success: false, error: error.message });
   }
 };
+
+
 
 export const alltodo = async (req, res) => {
   try {
