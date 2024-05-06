@@ -3,24 +3,28 @@ import dotenv from "dotenv"
 import mongoose from "mongoose"
 import cors from 'cors'
 
-
+import { alltodo, deleteYourTodo, getToDo, updateYourTodo } from "./controolers/ToDoControolers.js";
+import { getCurrentUser, login, register } from "./controolers/UserControolers.js";
 
 const app = express()
 app.use(cors())
 app.use(express.json())
 dotenv.config();
+
+
 app.get('/', (req, res) => {
     return res.send("Welcome to you.")
 })
 
-app.get("/get-todo", getToDo);
-app.get("/alltodo ", alltodo );
-app.get("/updateYourTodo ", updateYourTodo );
-app.get("/ deleteYourTodo ",  deleteYourTodo );
 
+app.post('/register', register );
+app.post('/login', login );
+app.post('/getcurrentuser ', getCurrentUser );
 
-
-
+app.post("/get-todo", getToDo);
+app.post("/alltodo ", alltodo );
+app.patch("/updateYourTodo ", updateYourTodo );
+app.delete("/ deleteYourTodo ",  deleteYourTodo );
 
 
 mongoose.connect(process.env.Mongo_URL).then(() =>{
