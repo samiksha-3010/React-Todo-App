@@ -2,7 +2,7 @@ import ToDoModel from "../modles/ToDoModel.js";
 
 export const getToDo = async (req, res) => {
   try {
-    const { text } = req.body.TodoData;
+    const { text } = req.body;
     if (!text) return res.status(404).json({ success: false, message: "All fields are mandtory.." })
     
     const todo= new ToDoModel({
@@ -53,8 +53,6 @@ export const deleteYourTodo = async (req, res) => {
       const { todoId } = req.body;
 
       if (!todoId) return res.status(404).json({ success: false, message: "todo Id  is mandtory.." })
-
-      
 
       const isDeleted = await ToDoModel.findOneAndDelete({ _id: todoId,})
       if (isDeleted) {

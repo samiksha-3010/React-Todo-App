@@ -6,7 +6,7 @@ import { addToDo, getAllToDo, updateToDo,deleteToDo } from './utils/HandleApi';
 function App() {
   const [todo,setToDo] = useState([])
    const [text, setText]= useState("")
-   const [isUpdate, setIsUpdate] = useState ()
+   const [isUpdate, setIsUpdate] = useState (false)
    const [todoId, setToDoId] = useState("")
 
 
